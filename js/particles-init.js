@@ -1,20 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const tsDiv = document.createElement("div");
-  tsDiv.id = "tsparticles";
-  document.body.appendChild(tsDiv); // Add as last element inside <body>
+  // Inject tsparticles container into the body
+  const particleDiv = document.createElement("div");
+  particleDiv.id = "tsparticles";
+  particleDiv.style.position = "fixed";
+  particleDiv.style.top = "0";
+  particleDiv.style.left = "0";
+  particleDiv.style.width = "100%";
+  particleDiv.style.height = "100%";
+  particleDiv.style.zIndex = "-1";
+  document.body.prepend(particleDiv);
 
+  // Load tsParticles config
   tsParticles.load("tsparticles", {
     background: {
       color: { value: "#ffffff" }
     },
     particles: {
       number: {
-        value: 50,
+        value: 60,
         density: { enable: true, value_area: 800 }
       },
       color: { value: "#00acc1" },
       shape: { type: "circle" },
-      opacity: { value: 0.5 },
+      opacity: { value: 0.3 },
       size: { value: 4, random: true },
       move: {
         enable: true,
@@ -30,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       modes: {
         repulse: { distance: 100 },
-        push: { quantity: 4 }
+        push: { quantity: 3 }
       }
     },
     detectRetina: true
