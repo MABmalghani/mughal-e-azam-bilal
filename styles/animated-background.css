@@ -1,0 +1,21 @@
+/* Full-screen animated background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 20% 20%, rgba(0,255,255,0.1), transparent),
+              radial-gradient(circle at 80% 80%, rgba(255,0,255,0.1), transparent),
+              radial-gradient(circle at 50% 50%, rgba(0,255,128,0.1), transparent);
+  background-size: 200% 200%;
+  animation: moveBackground 20s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* Animate background movement */
+@keyframes moveBackground {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
